@@ -13,12 +13,13 @@ python:
 install:
 - pip install -r requirements.txt
 - pip install django-chartjs
+- pip install coverage
 script:
 - cd decide
 - cp travis_local_settings.py local_settings.py
 - ./manage.py makemigrations
 - ./manage.py migrate
-- ./manage.py test --keepdb
+- coverage run --branch --source=. ./manage.py test --keepdb
 #deploy:
 #  provider: heroku
 #  app: decide-part-zumeta
