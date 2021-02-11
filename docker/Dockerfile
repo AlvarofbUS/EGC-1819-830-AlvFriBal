@@ -7,7 +7,6 @@ RUN pip install gunicorn
 RUN pip install psycopg2
 RUN pip install ipdb
 RUN pip install ipython
-RUN pip install django
 
 WORKDIR /app
 
